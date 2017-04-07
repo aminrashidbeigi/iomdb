@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/function.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="container">
+
+
+  <input class="btn btn-default" type="button" value="Sort by Title" onclick="sortTable(0)"/>
+  <input class="btn btn-default" type="button" value="Sort by Year" onclick="sortTable(1)"/>
+  <input class="btn btn-default" type="button" value="Sort by Rate" onclick="sortTable(3)"/>
+  <div class="panel-group">
+
+      <div class="panel panel-info">
+        <div class="panel-heading">Movie Table</div>
+        <div class="panel-body">
+
+
+          <table class="table" id="tableID">
+              <thead>
+              <tr>
+                  <th>Title</th>
+                  <th>Year</th>
+                  <th>Director</th>
+                  <th>Rate</th>
+                  <th>Add/Remove</th>
+
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>Godfather II</td>
+                  <td>1974</td>
+                  <td>Francis Ford Coppola</td>
+                  <td>9</td>
+                  <td><input class="btn btn-default" type="button" value="Delete" onclick="deleteRow(this)"/></td>
+              </tr>
+              <tr>
+                  <td>Interstellar</td>
+                  <td>2014</td>
+                  <td>Christopher Nolan</td>
+                  <td>8.6</td>
+                  <td><input class="btn btn-default" type="button" value="Delete" onclick="deleteRow(this)"/></td>
+              </tr>
+              <tr>
+                  <td><input type="text" class="form-control" id="title"></td>
+                  <td><input type="text" class="form-control" id="year"></td>
+                  <td><input type="text" class="form-control" id="dir"></td>
+                  <td><input type="text" class="form-control" id="rate"></td>
+                  <td><input class="btn btn-default" type="button" value="Add" onclick="addRow()"/></td>
+              </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel panel-danger">
+        <div class="panel-heading">Add your Movie</div>
+        <div class="panel-body">
+
+            <p>Add your movie : </p>
+            <div class="inputAndSubmit">
+              <input type="text" class="form-control" id="addMovie" onkeyup="inputKeyUp(event)">
+              <button class="btn btn-default" type="button" id="submit" onclick="addYourMovie()">submit</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+</body>
+</html>
